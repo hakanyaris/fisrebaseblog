@@ -54,7 +54,9 @@ class _IskeleState extends State<Iskele> {
   yaziGetir() {
     FirebaseFirestore.instance
         .collection('Yazilar')
-        .doc(t1.text)
+        .doc(
+          t1.text,
+        ) // koleksiyondaki tüm yazıları çekmek için bu satırı (doc(t1.text)) siliyoruz.
         .get()
         .then((gelenVeri) {
           setState(() {
